@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Id": "PolicyID",
+  "Statement": [
+    {
+      "Sid": "StmtID",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "<Enter the ARN for the Kinesis Firehose IAM role>"
+      },
+      "Action": [
+        "s3:AbortMultipartUpload",
+        "s3:GetBucketLocation",
+        "s3:GetObject",
+        "s3:ListBucket",
+        "s3:ListBucketMultipartUploads",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "<Enter the ARN of the S3 bucket>",
+        "<Enter the ARN of the S3 bucket>/*"
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
