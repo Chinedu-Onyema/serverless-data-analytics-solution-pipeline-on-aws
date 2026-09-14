@@ -15,6 +15,11 @@ Warning: To maintain regulatory compliance, ensure all services are deployed wit
 
 For multi-region disaster recovery, the customer would have to proffer a solution for that in the future.
 
+### PDF GUIDE: [DESIGNNING A SERVERLESS DATA ANALYTICS SOLUTION ON AWS.pdf](https://github.com/user-attachments/files/32198691/DESIGNNING.A.SERVERLESS.DATA.ANALYTICS.SOLUTION.ON.AWS.pdf)
+
+### WATCH VIDEO WALKTHROUGH HERE: https://youtu.be/e7dfyrv-690
+
+
 
 ### Step 1: Create IAM Security Policy for Kinesis Data Firehose
 
