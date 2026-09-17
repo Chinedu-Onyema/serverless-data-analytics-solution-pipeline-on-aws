@@ -7,6 +7,25 @@ The solution enables a customer's AWS infrastructure to ingest, store, process, 
 This customer is a fast-food business owner who wants to gain insights into ordered menu items while adhering to strict data regulatory requirements by ensuring all data stays within the eu-north-1 (Stockholm) region.
 
 
+## KEY ARCHITECTURAL COMPONENTS
+
+INGESTION: Amazon API Gateway	acts as the front-door service for client requests from the fast-food website, accepting clickstream data and securely routing it to the backend.
+
+STREAM PROCESSING: Amazon Kinesis Data Firehose	provides near real-time data delivery by ingesting streaming data from API Gateway and reliably loading it into Amazon S3.
+
+DATA TRANSFORMATION:	AWS Lambda triggered by Kinesis Firehose to clean and transform raw ingested data (e.g., adding newlines) before it is permanently stored in S3.
+
+STORAGE (DATA LAKE):	Amazon Simple Storage Service (S3) serves as the centralized, scalable, and secure online storage locker for all streaming data.
+
+INTERACTIVE QUERYING: Amazon Athena	enables running ad-hoc SQL queries directly on files sitting in the S3 bucket without needing to set up or manage servers.
+
+DATA VISUALIZATION: Amazon QuickSight turns raw data and Athena query results into interactive, visual dashboards to identify trends and outliers.
+
+### PDF GUIDE: [DESIGN A SERVERLESS DATA ANALYTICS SOLUTION ON AWS.pdf](https://github.com/user-attachments/files/32198691/DESIGNNING.A.SERVERLESS.DATA.ANALYTICS.SOLUTION.ON.AWS.pdf)
+
+### WATCH VIDEO WALKTHROUGH HERE: https://youtu.be/e7dfyrv-690
+
+
 ## DEPLOYMENT INSTRUCTIONS
 
 Follow these step-by-step instructions to implement the serverless analytics infrastructure.
@@ -14,11 +33,6 @@ Follow these step-by-step instructions to implement the serverless analytics inf
 Warning: To maintain regulatory compliance, ensure all services are deployed within the eu-north-1 (Stockholm) region.
 
 For multi-region disaster recovery, the customer would have to proffer a solution for that in the future.
-
-### PDF GUIDE: [DESIGNNING A SERVERLESS DATA ANALYTICS SOLUTION ON AWS.pdf](https://github.com/user-attachments/files/32198691/DESIGNNING.A.SERVERLESS.DATA.ANALYTICS.SOLUTION.ON.AWS.pdf)
-
-### WATCH VIDEO WALKTHROUGH HERE: https://youtu.be/e7dfyrv-690
-
 
 
 ### Step 1: Create IAM Security Policy for Kinesis Data Firehose
